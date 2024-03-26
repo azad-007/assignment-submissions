@@ -1,0 +1,30 @@
+.cardContainer {
+    width: 18rem;
+    background: blanchedalmond;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.cardImg{
+    height: 14rem;
+    margin: auto;
+    border-radius: 10px;
+    width: 100%;
+}
+
+.cardBody{
+    // margin-left: 10%;
+    // margin-right: 10%;
+    height: -webkit-fill-available;
+    position: relative;
+    min-height: 150px;
+}
+
+.cardBtn{
+    width: -webkit-fill-available;
+    position: absolute;
+    bottom: 0px;
+    background-color: rgb(74, 74, 245);
+}
