@@ -51,7 +51,11 @@ const AlbumList = () => {
       <Link className={styles.header} to="/">
         Back
       </Link>
-      {/* {loading && <p>Please wait while we fetch your data.</p>} */}
+      {initialLoad && (
+        <div className={styles.lds_circle}>
+          <div>Loading...</div>
+        </div>
+      )}
       <div className={styles.listContainer}>
         {listData.map((albumItem) => (
           <Item key={albumItem.id} item={albumItem} />
