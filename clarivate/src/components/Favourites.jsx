@@ -4,13 +4,17 @@ import { useSelector } from "react-redux";
 import * as styles from "./Favourites.module.scss";
 const Favourites = () => {
   const { listData } = useSelector((state) => state.list);
+  const favList = listData.filter((item) => item.isFavorite);
+  console.log(listData);
   return (
     <div className={styles.favoriteContainer}>
-      {listData
-        .filter((item) => item.isFavorite)
-        .map((favorite) => (
-          <Item key={favorite.id} item={favorite} />
-        ))}
+      {favList.length === 0 && (
+        <h1 style={{ color: "cornflowerblue" }}>
+          Visit Album to Add album photos to your favorite...
+        </h1>
+      )}
+      {favList.length !== 0 &&
+        favList.map((favorite) => <Item key={favorite.id} item={favorite} />)}
     </div>
   );
 };
